@@ -1,4 +1,4 @@
-{% set version = "0.2" %}
+{% set version = "0.2.1" %}
 
 package:
   name: otbenchmark
@@ -7,7 +7,7 @@ package:
 source:
   fn: otbenchmark-{{ version }}.tar.gz
   url: https://github.com/openturns/otbenchmark/archive/v{{ version }}.tar.gz
-  sha256: df8fca832199698885a16f8a297015f92d76671e26923fa7d0f2442ed18d5b5c
+  sha256: 167c4cbcd3a6955ecd959214e1da74d2af8b8e7ccdf6e1ce074081694675113b
   patches:
     # openturns is patched with numpy2 support on conda (but not pip)
     - numpy2.patch

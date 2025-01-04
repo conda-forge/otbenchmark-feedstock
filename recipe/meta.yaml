@@ -13,7 +13,7 @@ source:
     - numpy2.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
@@ -21,9 +21,9 @@ requirements:
   host:
     - pip
     - setuptools
-    - python >=3.6
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - openturns >=1.23
     - matplotlib-base >=3
 
@@ -32,6 +32,7 @@ test:
     - tests/
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
     - python -m unittest discover tests/
